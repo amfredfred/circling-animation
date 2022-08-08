@@ -1,0 +1,129 @@
+  body {
+    padding: 0;
+    margin: 0;
+  }
+
+  /* STYLING CONTAINERS */
+  .container {
+    width: 100vw;
+    height: 100vh;
+    /* background: #141E30;
+    background: -webkit-linear-gradient(to right, #243B55, #141E30);
+    background: linear-gradient(to right, #243B55, #141E30); */
+    display: flex
+  }
+
+  .innerContainer {
+    margin: auto;
+    width: 280px;
+    height: 280px;
+    background: white;
+    border-radius: 100%;
+    box-shadow: 0 20px 25px -25px rgba(0, 0, 0), 0 0 55px rgba(109, 110, 110, 0.2) inset;
+    overflow: hidden;
+  }
+
+  .icons-container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    position: relative;
+    transform-origin: center;
+    animation: universe-rotate 20s linear infinite;
+  }
+
+  .icon-wrap {
+    position: absolute;
+    position: absolute;
+    width: max-content;
+    height: max-content;
+    display: grid;
+    place-items: center;
+    padding: .2em;
+    border-radius: 5px;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+  }
+
+  .icon-link {
+    animation: universe-rotate 20s linear reverse infinite;
+    /* background: red; */
+  }
+
+  /* POSITIONING ICONS */
+
+  .icon-wrap:nth-child(1) {
+    transform: translate(6em, 0em);
+  }
+
+  .icon-wrap:nth-child(2) {
+    transform: translate(4em, 4em);
+  }
+
+  .icon-wrap:nth-child(3) {
+    transform: translate(0, 6em);
+  }
+
+  .icon-wrap:nth-child(4) {
+    transform: translate(-4em, 4em);
+  }
+
+  .icon-wrap:nth-child(5) {
+    transform: translate(-6em, 0em);
+  }
+
+  .icon-wrap:nth-child(6) {
+    transform: translate(-4em, -4em);
+  }
+
+  .icon-wrap:nth-child(7) {
+    transform: translate(0, -6em);
+  }
+
+  .icon-wrap:nth-child(8) {
+    transform: translate(4em, -4em);
+  }
+
+  /* HOVER EFFECTS */
+
+  .icons-container:hover, .icons-container:hover .icon-link {
+    animation-play-state: paused !important
+  }
+
+  .icon-wrap:hover::before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: conic-gradient(at center, red, green, orange, blue, pink, gold);
+    content: '';
+    z-index: 0;
+    animation: border-rotate infinite linear 5s;
+  }
+
+  /* Animation Start */
+
+  @keyframes universe-rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @-webkit-keyframes universe-rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+
+  @keyframes border-rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @-webkit-keyframes border-rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
